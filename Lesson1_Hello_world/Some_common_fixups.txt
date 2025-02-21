@@ -1,0 +1,12 @@
+﻿1) Как использовать кириллицу в программах C++?
+#include <Windows.h>
+
+SetConsoleCP(1251);   
+SetConsoleOutputCP(1251);
+setlocale(LC_ALL, "Russian");
+
+2) При выполнении программы появляется черное консольное окно, а затем сразу пропадает.
+В мэйне перед ретёрном добавьте:
+std::cin.clear(); 
+std::cin.ignore(32767, '\n');
+std::cin.get();
